@@ -33,7 +33,7 @@ $(document).scroll(function() {
         if (!fixed) {
             fixed = true;
             // $('#to-top').css({position:'fixed', display:'block'});
-            $('#to-top').show("slow", function() {
+            $('#to-top').show(function() {
                 $('#to-top').css({
                     position: 'fixed',
                     display: 'block'
@@ -43,7 +43,7 @@ $(document).scroll(function() {
     } else {
         if (fixed) {
             fixed = false;
-            $('#to-top').hide("slow", function() {
+            $('#to-top').hide(function() {
                 $('#to-top').css({
                     display: 'none'
                 });
