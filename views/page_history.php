@@ -14,13 +14,13 @@
             <?php foreach ($_SESSION['history'] as $appointment) : ?>
             <div class=" col-sm-offset-2 col-sm-8">
                 <div class="panel panel-info">
-                    <div class="panel-heading"><?php echo $appointment['visit_date'] ?></div>
+                    <div class="panel-heading"><?php echo htmlspecialchars($appointment['visit_date']) ?></div>
                     <div class="panel-body">
                         <div class="col-sm-2">
                             <label for="facility">Facility</label>
                         </div>
                         <div class="col-sm-10">
-                            <p id="facility"><?php echo $appointment['facility'] ?></p>
+                            <p id="facility"><?php echo htmlspecialchars($appointment['facility']) ?></p>
                         </div>
                         <div class="clearfix"></div>
 
@@ -28,7 +28,7 @@
                             <label for="hospital_readmission">Apply for hospital readmission</label>
                         </div>
                         <div class="col-sm-10">
-                            <p id="hospital_readmission"><?php echo $appointment['hospital_readmission'] ?></p>
+                            <p id="hospital_readmission"><?php echo htmlspecialchars($appointment['hospital_readmission']) ?></p>
                         </div>
                         <div class="clearfix"></div>
 
@@ -36,7 +36,7 @@
                             <label for="program">Healthcare Program</label>
                         </div>
                         <div class="col-sm-10">
-                            <p id="program"><?php echo $appointment['programs'] ?></p>
+                            <p id="program"><?php echo htmlspecialchars($appointment['programs']) ?></p>
                         </div>
                         <div class="clearfix"></div>
 
@@ -44,7 +44,7 @@
                             <label for="comment">Comment</label>
                         </div>
                         <div class="col-sm-10">
-                            <p id="comment"><?php echo $appointment['comment'] ?></p>
+                            <p id="comment"><?php echo htmlspecialchars($appointment['comment']) ?></p>
                         </div>
                     </div>
                 </div>
