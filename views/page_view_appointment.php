@@ -11,7 +11,7 @@
                     <label for="facility">Facility</label>
                 </div>
                 <div class="col-xs-8">
-                    <p id="facility"><%= $facility %></p>
+                    <p id="facility"><?php echo htmlspecialchars($facility) ?></p>
                 </div>
             </div>
             <div class="col-xs-offset-2 col-xs-8">
@@ -19,7 +19,7 @@
                     <label for="hospital_readmission">Apply for hospital readmission</label>
                 </div>
                 <div class="col-xs-8">
-                    <p id="hospital_readmission"><%= $hospital_readmission %></p>
+                    <p id="hospital_readmission"><?php echo htmlspecialchars($hospital_readmission) ?></p>
                 </div>
             </div>
             <div class="col-xs-offset-2 col-xs-8">
@@ -27,7 +27,7 @@
                     <label for="program">Healthcare Program</label>
                 </div>
                 <div class="col-xs-8">
-                    <p id="program"><%= $programs %></p>
+                    <p id="program"><?php echo htmlspecialchars($programs) ?></p>
                 </div>
             </div>
             <div class="col-xs-offset-2 col-xs-8">
@@ -35,7 +35,7 @@
                     <label for="visit_date">Visit Date</label>
                 </div>
                 <div class="col-xs-8">
-                    <p id="visit_date"><%= $visit_date %></p>
+                    <p id="visit_date"><?php echo htmlspecialchars($visit_date) ?></p>
                 </div>
             </div>
             <div class="col-xs-offset-2 col-xs-8">
@@ -43,7 +43,7 @@
                     <label for="comment">Comment</label>
                 </div>
                 <div class="col-xs-8">
-                    <p id="comment"><%= $comment %></p>
+                    <p id="comment"><?php echo htmlspecialchars($comment) ?></p>
                 </div>
             </div>
             <div class="col-xs-12">
