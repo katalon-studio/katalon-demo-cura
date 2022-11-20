@@ -8,7 +8,7 @@ if (sizeof($_POST) <= 0) {
 }
 
 $keys_diff = array_diff_key($_POST, array("facility" => "", "hospital_readmission" => "", "programs" => "", "visit_date" => "", "comment" => ""));
-if (sizeof($keys_diff) != 0) {
+if (sizeof($keys_diff) != 0 || !($antiCSRF->isValidRequest())) {
     echo _f::render("invalid_appointment", array(), true);
     die();
 }
