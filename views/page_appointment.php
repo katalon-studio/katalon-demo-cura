@@ -54,6 +54,10 @@
                         <textarea class="form-control" id="txt_comment" name="comment" placeholder="Comment" rows="10"></textarea>
                     </div>
                 </div>
+                <?php 
+                require_once __DIR__ . '/security.php';
+                $antiCSRF = new securityService();
+                $antiCSRF->insertHiddenToken(); ?>
                 <div class="form-group">
                     <div class="col-sm-offset-5 col-sm-4">
                         <button id="btn-book-appointment" type="submit" class="btn btn-default">Book Appointment</button>

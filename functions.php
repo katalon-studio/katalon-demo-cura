@@ -3,7 +3,11 @@
 require 'config.php';
 require 'underscore.php';
 
+require_once __DIR__ . '/security.php';
+$antiCSRF = new securityService();
+
 class _f extends __{
+
     public function render($page_name, $data = array(), $include_main_template = false) {
         if (!self::isArray($data)) {
             die("Invalid data type input! Data must be an array of keys and values.");
@@ -47,6 +51,7 @@ class _f extends __{
         if ($user === USERNAME && $password === PASSWORD) {
             $_SESSION[SESSION_KEY_IS_LOGGED_IN] = true;
             $_SESSION[SESSION_KEY_USER] = $user;
+            $antiCSRF->getCSRFToken();
             unset($_SESSION[SESSION_KEY_ERROR]);
             return true;
         }
@@ -59,6 +64,7 @@ class _f extends __{
 
     public function logout(){
         session_unset();
+        $antiCSRF->unsetToken();
         return session_destroy();
     }
 
