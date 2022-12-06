@@ -2,11 +2,14 @@
 
 require 'config.php';
 require 'underscore.php';
-
-require_once __DIR__ . '/security.php';
-$antiCSRF = new securityService();
+require 'security.php';
 
 class _f extends __{
+    public $antiCSRF;
+
+    public function __construct() {
+        $this->antiCSRF = new securityService();
+    }
 
     public function render($page_name, $data = array(), $include_main_template = false) {
         if (!self::isArray($data)) {
@@ -51,7 +54,7 @@ class _f extends __{
         if ($user === USERNAME && $password === PASSWORD) {
             $_SESSION[SESSION_KEY_IS_LOGGED_IN] = true;
             $_SESSION[SESSION_KEY_USER] = $user;
-            $antiCSRF->getCSRFToken();
+            $this->antiCSRF->getCSRFToken();
             unset($_SESSION[SESSION_KEY_ERROR]);
             return true;
         }
@@ -64,7 +67,7 @@ class _f extends __{
 
     public function logout(){
         session_unset();
-        $antiCSRF->unsetToken();
+        $this->antiCSRF->unsetToken();
         return session_destroy();
     }
 
