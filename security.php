@@ -12,7 +12,7 @@ class SecurityService
 
     private $server = [];
 
-    private $excludeUrl = [];
+    private $excludeUrl = ["https://kip.katalon.com/v1/KA-743630-8"];
 
     private $hashAlgo = 'sha256';
 
